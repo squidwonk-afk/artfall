@@ -2,7 +2,7 @@ name: Deploy Vite site to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -19,17 +19,17 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./artfall
 
       - name: Build website
         run: npm run build
-        working-directory: ./artfall
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./artfall/build   # IMPORTANT FIX
-
+          path: ./dist   # If your vite.config outputs "dist"
+          # OR
+          # path: ./build  if your vite.config outputs "build"
+  
   deploy:
     needs: build
     runs-on: ubuntu-latest
