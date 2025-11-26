@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import FallingLeaves from '../components/FallingLeaves';
 import GlitchText from '../components/GlitchText';
-import artfallImage from '../assets/artfall.png';
+import artfallImage from '../assets/83144e22ce975f95baa731b0c677d7b17047b0af.png';
 
 export default function LorePage() {
   const { t } = useTranslation();
