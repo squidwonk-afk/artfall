@@ -19,14 +19,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ./artfall
 
       - name: Build website
         run: npm run build
+        working-directory: ./artfall
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./build   # IMPORTANT FIX
+          path: ./artfall/build   # IMPORTANT FIX
 
   deploy:
     needs: build
