@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+/* Custom Anime Title Font Effect */
+.anime-title {
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    3px 3px 0 #E86A2A,
+    -1px -1px 0 #E86A2A,
+    1px -1px 0 #E86A2A,
+    -1px 1px 0 #E86A2A,
+    5px 5px 15px rgba(232, 106, 42, 0.5);
+}
+
+/* VHS Noise Effect */
+.vhs-noise {
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.1) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+  animation: vhs-noise 0.2s infinite;
+}
+
+@keyframes vhs-noise {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(2px); }
+}
+
+.vhs-noise-texture {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    transparent 1px,
+    transparent 2px
+  );
+}
+
+/* Glitch Text Effects */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  animation: glitch-flicker 3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  animation: glitch-top 2s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  text-shadow: -2px 0 #00ffff;
+}
+
+.glitch-text::after {
+  animation: glitch-bottom 2s infinite;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+  text-shadow: 2px 0 #ff00ff;
+}
+
+@keyframes glitch-flicker {
+  0%, 90%, 100% { opacity: 1; }
+  91%, 94%, 97% { opacity: 0.8; }
+}
+
+@keyframes glitch-top {
+  2%, 64% { transform: translate(2px, -2px); }
+  4%, 60% { transform: translate(-2px, 2px); }
+  62% { transform: translate(13px, -1px) skew(-13deg); }
+}
+
+@keyframes glitch-bottom {
+  2%, 64% { transform: translate(-2px, 0); }
+  4%, 60% { transform: translate(-2px, 0); }
+  62% { transform: translate(-13px, 5px) skew(21deg); }
+}
+
+.glitch-text-subtle {
+  animation: glitch-subtle 4s infinite;
+}
+
+@keyframes glitch-subtle {
+  0%, 96%, 100% { text-shadow: 0 0 0 transparent; }
+  97% { 
+    text-shadow: 
+      2px 0 #00ffff,
+      -2px 0 #ff00ff;
+  }
+  98% { 
+    text-shadow: 
+      -2px 0 #00ffff,
+      2px 0 #ff00ff;
+  }
+}
+
+.glitch-text-medium {
+  animation: glitch-medium 2s infinite;
+}
+
+@keyframes glitch-medium {
+  0%, 94%, 100% { 
+    text-shadow: 0 0 0 transparent; 
+    transform: translate(0);
+  }
+  95% { 
+    text-shadow: 
+      2px 0 #00ffff,
+      -2px 0 #ff00ff;
+    transform: translate(-2px, 2px);
+  }
+  97% { 
+    text-shadow: 
+      -2px 0 #00ffff,
+      2px 0 #ff00ff;
+    transform: translate(2px, -2px);
+  }
+}
+
+/* Navigation Link Effect */
+.nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #E86A2A, #FFB26B);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Glow Button Effect */
+.glow-button {
+  position: relative;
+  box-shadow: 
+    0 0 10px rgba(232, 106, 42, 0.5),
+    0 0 20px rgba(232, 106, 42, 0.3),
+    inset 0 0 10px rgba(232, 106, 42, 0.2);
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  box-shadow: 
+    0 0 20px rgba(255, 178, 107, 0.8),
+    0 0 40px rgba(232, 106, 42, 0.5),
+    inset 0 0 15px rgba(255, 178, 107, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Social Icon Effect */
+.social-icon {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  filter: drop-shadow(0 0 10px currentColor);
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Glitch Border Animation */
+@keyframes glitch-border {
+  0%, 90%, 100% { opacity: 0; }
+  92%, 96% { opacity: 0.8; }
+  94%, 98% { opacity: 0; }
+}
+
+.animate-glitch-border {
+  animation: glitch-border 5s infinite;
+}
+
+/* Falling Leaves Background */
+.falling-leaves-bg {
+  background-image: radial-gradient(circle, #E86A2A 2px, transparent 2px);
+  background-size: 50px 50px;
+  animation: falling-leaves-scroll 20s linear infinite;
+}
+
+@keyframes falling-leaves-scroll {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100px; }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #E86A2A, #FFB26B);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFB26B, #E86A2A);
+}
+
+/* Smooth transitions for page navigation */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
