@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import FallingLeaves from '../components/FallingLeaves';
 import GlitchText from '../components/GlitchText';
-import artfallImage from 'figma:asset/83144e22ce975f95baa731b0c677d7b17047b0af.png';
+import artfallImage from 'src/assets/83144e22ce975f95baa731b0c677d7b17047b0af.png';
 
 export default function HomePage() {
   const navigate = useNavigate();
